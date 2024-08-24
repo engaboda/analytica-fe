@@ -44,10 +44,19 @@ export default function Textual() {
         const getDocumentsApi = ()=>{
             fetch("http://localhost:5000/api/text/all", requestOptions)
               .then((response) => response.json())
-              .then((json) => setDocument(json['hits']['hits']))
+              .then((json) => {
+                  if(json.status == "failed"){
+                    setDocument([])
+                  }
+                  else{
+                    setDocument(json['hits']['hits'])
+                  }
+              })
         }
         getDocumentsApi();
-        console.log('0: ', document)
+        if(document.length != 0){
+            console.log('000000000000000')
+        }
 
     }, []);
 
