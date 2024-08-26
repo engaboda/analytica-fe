@@ -51,7 +51,7 @@ const resizeImage = (id)=>{
     const requestOptions = {
           method: "POST",
           body: JSON.stringify({
-            "size": [150, 200]
+            "size": [10, 10]
           }),
           headers: {
             'Content-Type': 'application/json',

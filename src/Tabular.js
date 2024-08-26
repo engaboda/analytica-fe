@@ -110,7 +110,7 @@ export default function Tabular(active) {
 
     useEffect(()=>{
         const filesApi = ()=>{
-            fetch("http://localhost:5000/api/tabular", requestOptions)
+            fetch("http://localhost:5000/api/tabular?filter=csv", requestOptions)
               .then((response) => response.json())
               .then((json) => setFiles(json['data']))
         }
